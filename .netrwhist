@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/rmongia/kido/build_vg/service/mixer'
+let g:netrw_dirhist_2='/home/rmongia/kido'
+let g:netrw_dirhist_3='/home/rmongia'
+let g:netrw_dirhist_4='/home/rmongia/kido'
+let g:netrw_dirhist_5='/home/rmongia'
+let g:netrw_dirhist_6='/home'
+let g:netrw_dirhist_7='/'
+let g:netrw_dirhist_8='/home/rmongia/kido'
