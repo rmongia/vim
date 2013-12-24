@@ -5,8 +5,8 @@ endfunction
 " FileExplorer
 noremap <C-F> :call FileExplorer()<CR>
 function! FileExplorer()
-    if filereadable( $REPO_ROOT . '/cscope.files' )
-        edit $REPO_ROOT/cscope.files
+    if filereadable( $REPO_ROOT . '/files.list' )
+        edit $REPO_ROOT/files.list
         setlocal nomodifiable
         setlocal readonly
         setlocal buftype=nowrite
@@ -16,7 +16,7 @@ function! FileExplorer()
         highlight link xIgnore Ignore
         noremap <buffer> <CR> :call LoadFile()<CR>
     else
-        echohl ErrorMsg | echo "cscope.files not found" | echohl None
+        echohl ErrorMsg | echo "files.list not found" | echohl None
     endif
 endfunction
 function! LoadFile()
