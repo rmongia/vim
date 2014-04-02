@@ -7,14 +7,12 @@ set ai
 set sw=2 ts=2 ci et
 
 " Error highlighting
-match ErrorMsg '\%>80v.\+'
-syntax match Error /\s\+$/
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:2match ExtraWhitespace /\s\+$/
-match Error /\s\+$/
+match ErrorMsg "\%>80v.\+"
+" match ErrorMsg /\s\+$/
 :au BufRead,BufNewFile * highlight NoSpace ctermbg=red guibg=red
 :au BufRead,BufNewFile * 2match NoSpace /\(\<for\>\|\<if\>\)(/
 :au BufRead,BufNewFile * 2match NoSpace /\(( !\)/
+:au BufRead,BufNewFile * 2match NoSpace /\s\+$/
 :au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
 set comments=:///,://
 set hlsearch
