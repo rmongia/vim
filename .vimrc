@@ -21,6 +21,9 @@ filetype plugin indent on
 set nocindent
 highlight Search  ctermbg=0 ctermfg=1
 
+" User defined variables
+let g:project_root="/home/rmongia/kido"
+
 " Color schema
 set background=dark
 let g:solarized_termtrans=1

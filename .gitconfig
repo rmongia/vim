@@ -1,0 +1,38 @@
+[user]
+	name = Ramandeep Singh
+	email = rmongia@instartlogic.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[diff]
+	external = /home/rmongia/usr/bin/gitvimdiff.sh
+[pager]
+  diff =
+[color]
+	ui = auto
+[alias]
+	br = branch --color
+	co = checkout
+	d = diff
+	ci = commit
+	st = status
+	cp = cherry-pick
+  pull = fetch
+  pom = push origin master
+  rom = rebase origin/master
+  rem = rebase master
+  com = checkout master
+  fo = fetch origin
+  amend = commit --amend
+  aa = commit -a --amend
+  ca = commit -a
+  l = log
+  lp = log -p
+  ls = log --stat
+  lo = log --oneline
+  r = rebase
+[reviewboard]
+	url = https://reviewboard.insnw.net
+[commit]
+	template = /home/rmongia/.git/commit-template

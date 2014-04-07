@@ -1,0 +1,6 @@
+alias grep="grep --color=auto "
+alias ssh="( ssh-add -l > /dev/null || ssh-add ) && ssh"
+alias scp="( ssh-add -l > /dev/null || ssh-add ) && scp"
+alias startvm="VBoxManage startvm Ubuntu"
+alias stopvm="VBoxManage controlvm Ubuntu savestate"
+alias restorehosts="/bin/cp /etc/hosts.bkup /etc/hosts"

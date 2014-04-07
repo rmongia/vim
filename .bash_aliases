@@ -1,0 +1,11 @@
+alias kido="cd /home/rmongia/kido"
+alias bin="cd $HOME/kido/build"
+alias cf="find . -iname \"*.c\" -o -iname \"*.cpp\" -o -iname \"*.h\" -o -iname \"*.hpp\" > cscope.files"
+alias cs='cscope -b -i cscope.files -f cscope.out'
+alias tagify="ctags -L cscope.files"
+alias mj="make -j 2"
+alias nmrestart="pkill nm-applet && nohup nm-applet &"
+alias vpnstop="sudo service openvpn stop"
+alias vpnstart="sudo service openvpn start"
+alias cp=gcp
+alias d="ssh desktop"
