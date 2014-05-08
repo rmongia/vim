@@ -3,22 +3,25 @@ execute pathogen#infect()
 
 " Errors/Common
 syntax on
-set ai
-set sw=2 ts=2 ci et
+set cinoptions=(2,g0,N-s
+set sw=2 ts=2 ai ci et
+" CIndent options
+" Set (\n -> <current indent +2>
+" Set to u0 for <current location of (>
+" g0 -> public/private with no indent
+" N-s -> no indent for namespace
 
 " Error highlighting
-match ErrorMsg "\%>80v.\+"
-" match ErrorMsg /\s\+$/
+" match ErrorMsg "\%>80v.\+"
 :au BufRead,BufNewFile * highlight NoSpace ctermbg=red guibg=red
 :au BufRead,BufNewFile * 2match NoSpace /\(\<for\>\|\<if\>\)(/
 :au BufRead,BufNewFile * 2match NoSpace /\(( !\)/
 :au BufRead,BufNewFile * 2match NoSpace /\s\+$/
+:au BufRead,BufNewFile * 2match ErrorMsg "\%>80v.\+"
 :au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
 set comments=:///,://
 set hlsearch
 filetype indent on
-filetype plugin indent on
-set nocindent
 highlight Search  ctermbg=0 ctermfg=1
 
 " User defined variables

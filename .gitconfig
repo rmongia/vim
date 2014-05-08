@@ -6,32 +6,32 @@
 [merge]
 	tool = vimdiff
 [diff]
-	external = /home/rmongia/usr/bin/gitvimdiff.sh
+  external = /home/rmongia/usr/bin/gitvimdiff.sh
 [pager]
   diff =
 [color]
 	ui = auto
 [alias]
 	br = branch --color
-	co = checkout
-	d = diff
 	ci = commit
-	st = status
+	co = checkout
 	cp = cherry-pick
-  pull = fetch
-  pom = push origin master
-  rom = rebase origin/master
-  rem = rebase master
+  d = diff
+	st = status
+  aa = commit -a --amend
+  amend = commit --amend
+  ca = commit -a
   com = checkout master
   fo = fetch origin
-  amend = commit --amend
-  aa = commit -a --amend
-  ca = commit -a
   l = log
+  lo = log --oneline
   lp = log -p
   ls = log --stat
-  lo = log --oneline
+  pom = push origin master
+  pull = fetch
   r = rebase
+  rem = rebase master
+  rom = rebase origin/master
 [reviewboard]
 	url = https://reviewboard.insnw.net
 [commit]
