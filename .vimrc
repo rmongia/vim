@@ -3,13 +3,18 @@ execute pathogen#infect()
 
 " Errors/Common
 syntax on
-set cinoptions=(2,g0,N-s
 set sw=2 ts=2 ai ci et
+filetype indent on
+filetype plugin indent on
+
 " CIndent options
 " Set (\n -> <current indent +2>
 " Set to u0 for <current location of (>
 " g0 -> public/private with no indent
 " N-s -> no indent for namespace
+set cinoptions=(2,g0,N-s
+
+set comments=:///,://
 
 " Error highlighting
 " match ErrorMsg "\%>80v.\+"
@@ -19,10 +24,12 @@ set sw=2 ts=2 ai ci et
 :au BufRead,BufNewFile * 2match NoSpace /\s\+$/
 :au BufRead,BufNewFile * 2match ErrorMsg "\%>80v.\+"
 :au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
-set comments=:///,://
 set hlsearch
-filetype indent on
 highlight Search  ctermbg=0 ctermfg=1
+
+" Python syntax cleanup
+let g:autopep8_indent_size=2
+let g:autopep8_disable_show_diff=1
 
 " User defined variables
 let g:project_root="/home/rmongia/kido"
