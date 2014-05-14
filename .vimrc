@@ -1,33 +1,43 @@
+" Vim Profile
+" Author: Ramandeep Singh <mongia.ramandeep@gmail.com>
+
 " Install plugins
 execute pathogen#infect()
 
-" Errors/Common
+" Syntax highlighting
 syntax on
-set sw=2 ts=2 ai ci et
+
+" Common indentation options
 filetype indent on
 filetype plugin indent on
+set sw=2 ts=2 ai ci et
+autocmd FileType gitcommit setlocal autoindent ts=2
 
 " CIndent options
 " Set (\n -> <current indent +2>
 " Set to u0 for <current location of (>
 " g0 -> public/private with no indent
 " N-s -> no indent for namespace
-set cinoptions=(2,g0,N-s
+set cinoptions=(0,u0,g0,N-s,W1s
 
+" Comments
 set comments=:///,://
 
 " Error highlighting
-" match ErrorMsg "\%>80v.\+"
 :au BufRead,BufNewFile * highlight NoSpace ctermbg=red guibg=red
 :au BufRead,BufNewFile * 2match NoSpace /\(\<for\>\|\<if\>\)(/
 :au BufRead,BufNewFile * 2match NoSpace /\(( !\)/
 :au BufRead,BufNewFile * 2match NoSpace /\s\+$/
 :au BufRead,BufNewFile * 2match ErrorMsg "\%>80v.\+"
+
+" Delete trailing whitespaces
 :au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
+
+" Search highlight
 set hlsearch
 highlight Search  ctermbg=0 ctermfg=1
 
-" Python syntax cleanup
+" Python syntax cleanup (F8 for inplace cleanup)
 let g:autopep8_indent_size=2
 let g:autopep8_disable_show_diff=1
 
