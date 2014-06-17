@@ -22,13 +22,18 @@ set cinoptions=(0,u0,g0,N-s,W1s
 
 " Comments
 set comments=:///,://
+let g:DoxygenToolkit_commentType = "C++"
 
-" Error highlighting
+" Highlighting
 :au BufRead,BufNewFile * highlight NoSpace ctermbg=red guibg=red
 :au BufRead,BufNewFile * 2match NoSpace /\(\<for\>\|\<if\>\)(/
 :au BufRead,BufNewFile * 2match NoSpace /\(( !\)/
 :au BufRead,BufNewFile * 2match NoSpace /\s\+$/
 :au BufRead,BufNewFile * 2match ErrorMsg "\%>80v.\+"
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
+
 
 " Delete trailing whitespaces
 :au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
@@ -81,7 +86,7 @@ let g:ctrlp_custom_ignore = {
 
 " Ctags
 " noremap <C-F12> :UpdateTags -R $VIEW_ROOT
-let g:easytags_auto_update=0
+let g:easytags_auto_update=1
 let g:easytags_on_cursorhold=0
 let g:easytags_always_enabled=0
 let g:easytags_dynamic_files=1
