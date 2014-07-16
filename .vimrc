@@ -23,6 +23,8 @@ set cinoptions=(0,u0,g0,N-s,W1s
 " Comments
 set comments=:///,://
 let g:DoxygenToolkit_commentType = "C++"
+nnoremap <F4> :Dox<CR>
+let g:DoxygenToolkit_briefTag_pre=""
 
 " Highlighting
 :au BufRead,BufNewFile * highlight NoSpace ctermbg=red guibg=red

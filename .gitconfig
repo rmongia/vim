@@ -32,6 +32,7 @@
   r = rebase
   rem = rebase master
   rom = rebase origin/master
+  rs1 = reset HEAD~1
 [reviewboard]
 	url = https://reviewboard.insnw.net
 [commit]
