@@ -34,3 +34,12 @@
 [submodule "bundle/doxygentoolkit"]
 	path = bundle/doxygentoolkit
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
+[submodule "bundle/soda.vim"]
+	path = bundle/soda.vim
+	url = https://github.com/DAddYE/soda.vim.git
+[submodule "bundle/vim-autopep8"]
+	path = bundle/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8.git
+[submodule "bundle/vim-autoformat"]
+	path = bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat.git

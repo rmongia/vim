@@ -14,7 +14,7 @@
 [alias]
 	br = branch --color
 	ci = commit
-	co = checkout
+  co = checkout
 	cp = cherry-pick
   d = diff
 	st = status

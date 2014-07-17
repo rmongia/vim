@@ -12,13 +12,15 @@ filetype indent on
 filetype plugin indent on
 set sw=2 ts=2 ai ci et
 autocmd FileType gitcommit setlocal autoindent ts=2
+let g:formatprg_args_c="--mode=c --style=k/r -s2 -k1"
+let g:formatprg_args_cpp="--mode=c --style=stroustrup -s2 -k1"
 
 " CIndent options
 " Set (\n -> <current indent +2>
 " Set to u0 for <current location of (>
 " g0 -> public/private with no indent
 " N-s -> no indent for namespace
-set cinoptions=(0,u0,g0,N-s,W1s
+set cinoptions=(0,u0,g0,N-s,W1s,t0
 
 " Comments
 set comments=:///,://
@@ -57,7 +59,7 @@ let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="normal"
 let g:solarized_visibility="high"
-colorscheme solarized
+colorscheme jellybeans
 
 " TagBar
 let g:tagbar_usearrows = 1
