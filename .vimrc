@@ -15,6 +15,7 @@ autocmd FileType gitcommit setlocal autoindent ts=2
 let g:formatprg_args_c="--mode=c --style=k/r -s2 -k1"
 let g:formatprg_args_cpp="--mode=c --style=stroustrup -s2 -k1"
 
+
 " CIndent options
 " Set (\n -> <current indent +2>
 " Set to u0 for <current location of (>
@@ -111,3 +112,9 @@ let g:ycm_extra_conf_globlist = ['~/*']
 " let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_collect_identifiers_from_tags_files = 0
+
+
+" Different configurations for Desktop than the laptop
+if hostname() == "rmongia-desktop"
+  colorscheme desert
+endif
