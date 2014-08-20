@@ -82,7 +82,7 @@ endif
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrl_map = '<c-s-p>'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/build_vg/*,*/build/*,*.a,*.o
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/build_rel/*,*/build/*,*.a,*.o
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](build_vg|build|(\.(git|hg|svn)))$',
   \ 'file': '\v\.(so|cmake)$',
