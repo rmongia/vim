@@ -1,7 +1,7 @@
 function! LoadHeaderFile()
   0read ~/.vim/plugin/cpp/h.tmpl
   let path = expand("<afile>:p")
-  let mangled_filename = toupper(substitute(substitute(path, g:project_root, 'INSTART', ''), '/\|\.', '_', 'g'))
+  let mangled_filename = toupper(substitute(substitute(path, g:view_root, 'INSTART', ''), '/\|\.', '_', 'g'))
   /__IFDEFS__
   delete
   execute "normal i#ifndef " . mangled_filename . "\r"
@@ -17,7 +17,7 @@ function! LoadCppFile()
   0read ~/.vim/plugin/cpp/cpp.tmpl
   $
   let path = expand("<afile>:p:r")
-  let include_path = substitute(substitute(path, g:project_root, '', ''), '/', '', '')
+  let include_path = substitute(substitute(path, g:view_root, '', ''), '/', '', '')
   %s/__INCLUDE_FILE__/\=expand(include_path)/g
   %s/__NS__/\=expand("<afile>:p:h:t")/g
   ?namespace

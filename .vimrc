@@ -7,6 +7,9 @@ execute pathogen#infect()
 " Syntax highlighting
 syntax on
 
+" Enable spellchecking
+map <F5> :setlocal spell! spelllang=en_us<CR>
+
 " Common indentation options
 filetype indent on
 filetype plugin indent on
@@ -26,7 +29,7 @@ set cinoptions=(0,u0,g0,N-s,W1s,t0
 " Comments
 set comments=:///,://
 let g:DoxygenToolkit_commentType = "C++"
-nnoremap <F4> :Dox<CR>
+noremap <F4> :Dox<CR>
 let g:DoxygenToolkit_briefTag_pre=""
 
 " Highlighting
@@ -51,9 +54,6 @@ highlight Search  ctermbg=0 ctermfg=1
 let g:autopep8_indent_size=2
 let g:autopep8_disable_show_diff=1
 
-" User defined variables
-let g:project_root="/home/rmongia/kido"
-
 " Color schema
 set background=dark
 let g:solarized_termtrans=1
@@ -67,16 +67,19 @@ let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
+" view root
+let g:view_root=substitute(system('git rev-parse --show-toplevel'), "\n", "", "g")
+
 " Cscope
 function! UpdateDB()
   let l_Change2Root = system ('cd /') . "\n"
-  let l_FindOut = system ('find $VIEW_ROOT -iname "*.py" -o -iname "*.proto" -o -iname "*.c" -o -iname "*.cpp" -o -iname "*.h" -o -iname "*.hpp" > $VIEW_ROOT/cscope.files') . "\n"
-  let l_CSOUt = system ('cscope -b -i $VIEW_ROOT/cscope.files -f $VIEW_ROOT/cscope.out') . "\n"
+  let l_FindOut = system ('find g:view_root -iname "*.py" -o -iname "*.proto" -o -iname "*.c" -o -iname "*.cpp" -o -iname "*.h" -o -iname "*.hpp" > g:view_root/cscope.files') . "\n"
+  let l_CSOUt = system ('cscope -b -i g:view_root/cscope.files -f g:view_root/cscope.out') . "\n"
   :cs reset
 endfunction
 command! UpdateDB :call UpdateDB()
-if filereadable('$VIEW_ROOT/cscope.out')
-    cs add $VIEW_ROOT/cscope.out
+if filereadable('g:view_root/cscope.out')
+    cs add g:view_root/cscope.out
 endif
 
 " CtrlP
@@ -90,11 +93,12 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Ctags
-" noremap <C-F12> :UpdateTags -R $VIEW_ROOT
+" noremap <C-F12> :UpdateTags -R g:view_root
 let g:easytags_auto_update=1
 let g:easytags_on_cursorhold=0
 let g:easytags_always_enabled=0
 let g:easytags_dynamic_files=1
+let g:easytags_file=g:view_root . "/tags"
 
 " Coding
 inoremap <F2> <C-o>:w!<CR>
