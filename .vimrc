@@ -18,7 +18,6 @@ autocmd FileType gitcommit setlocal autoindent ts=2
 let g:formatprg_args_c="--mode=c --style=k/r -s2 -k1"
 let g:formatprg_args_cpp="--mode=c --style=stroustrup -s2 -k1"
 
-
 " CIndent options
 " Set (\n -> <current indent +2>
 " Set to u0 for <current location of (>
@@ -42,13 +41,15 @@ augroup filetype
   au! BufRead,BufNewFile *.proto setfiletype proto
 augroup end
 
-
 " Delete trailing whitespaces
 :au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
 
 " Search highlight
 set hlsearch
 highlight Search  ctermbg=0 ctermfg=1
+
+" Toggle between paste and non-paste mode
+set pastetoggle=<F6>
 
 " Python syntax cleanup (F8 for inplace cleanup)
 let g:autopep8_indent_size=2
