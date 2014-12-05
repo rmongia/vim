@@ -42,7 +42,7 @@ augroup filetype
 augroup end
 
 " Delete trailing whitespaces
-:au BufWritePre *.proto,*.cpp,*.py,*.h,*.c :%s/\s\+$//e
+:au BufWritePre *.proto,*.cpp,*.py,*.h,*.c,*.json :%s/\s\+$//e
 
 " Search highlight
 set hlsearch
