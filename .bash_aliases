@@ -21,3 +21,4 @@ complete -F _make dmj
 if [ $HOSTNAME != "rmongia-desktop" ]; then
  alias cp=gcp
  alias d="ssh rmongia-desktop"
+fi
