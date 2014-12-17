@@ -6,6 +6,7 @@ alias tagify="ctags -L cscope.files"
 alias nmrestart="pkill nm-applet && nohup nm-applet &"
 alias vpnstop="sudo service openvpn stop"
 alias vpnstart="sudo service openvpn start"
+alias d="ssh rmongia-desktop"
 alias vg="/usr/bin/valgrind --leak-check=no --show-reachable=no --workaround-gcc296-bugs=yes --num-callers=50 --suppressions=/home/rmongia/kido/cmake/instart.supp"
 alias gg="git grep"
 

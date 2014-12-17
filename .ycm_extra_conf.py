@@ -30,6 +30,12 @@
 
 import os
 import ycm_core
+import subprocess
+
+try:
+  repo = subprocess.check_output(['/usr/bin/git', 'rev-parse', '--show-toplevel']).strip()
+except subprocess.CalledProcessError as e:
+  repo = '/home/rmongia/kido'
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -88,11 +94,10 @@ flags = [
 '-DINSTART_TOOLCHAIN_INCLUDE_DIR=/opt/instart/toolchain/linux-x86_64/include',
 '-DINSTART_TOOLCHAIN_LIBRARY_DIR=/opt/instart/toolchain/linux-x86_64/lib',
 '-DINSTART_TOOLCHAIN_BINARY_DIR=/opt/instart/toolchain/linux-x86_64/bin',
-'-I/home/rmongia/kido',
+'-I%s' % repo,
 '-I/opt/instart/toolchain/linux-x86_64/include',
 '-I/opt/instart/toolchain/linux-x86_64/include/libxml2',
 '-I/usr/include/libxml2'
-
 ]
 
 
